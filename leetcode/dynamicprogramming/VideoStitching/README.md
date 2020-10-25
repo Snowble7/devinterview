@@ -53,6 +53,23 @@ DP[T] := Hold the minimum number of clips required to get the T seconds clip len
 ```
 1. Sort first
 2. 각각의 Clip에 대해 DP[clip[i][0]] ~ DP[clip[i][1]] 에 Update
+
+// Clip [[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]]
+// T 10
+
+// Sort first
+Clip  [[0,2],[1,5],[1,9],[4,6],[5,9],[8,10]]
+ dp[j] = min(dp[j], dp[clips[i][0]] + 1);
+ DP 101 101 101 101 101 101 101 101 101 101 101
+// init DP[0] = 0
+ DP   0   1   1 101 101 101 101 101 101 101 101 
+ DP   0   1   1 101 101 101 101 101 101 101 101 -> 0,2
+ DP   0   1   1   2   2   2 101 101 101 101 101 -> 1,5
+ DP   0   1   1   2   2   2   2   2   2   2 101 -> 1,9
+ DP   0   1   1   2   2   2   2   2   2   2 101 -> 4,6
+ DP   0   1   1   2   2   2   2   2   2   2 101 -> 5,9
+ DP   0   1   1   2   2   2   2   2   2   2   3 -> 8,10
+
 ```
 
 # Implementation
