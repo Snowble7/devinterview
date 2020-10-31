@@ -70,7 +70,6 @@ public:
 
 ##Implementation(DP? prefix sum)
 ```
-
 class Solution {
 public:
     #define MAX(a,b) ((a)>(b))?(a):(b)
@@ -93,7 +92,6 @@ public:
         return ans;
     }
 };        
-
 ```
 # Complexity
 
